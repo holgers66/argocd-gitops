@@ -9,9 +9,9 @@ spec:
     helm:
       version: v3
       valueFiles:
-      - ../values-gke.andersondario.dev.yaml
+      - ../values-oci.yaml
     path: argocd-install/argo-cd
-    repoURL: https://github.com/andersondario/argocd-gitops.git
+    repoURL: https://github.com/holgers66/argocd-gitops.git
     targetRevision: HEAD
   destination:
     namespace: argocd
@@ -32,7 +32,7 @@ spec:
   project: argocd
   source:
     path: argocd-appprojects
-    repoURL: https://github.com/andersondario/argocd-gitops.git
+    repoURL: https://github.com/holgers66/argocd-gitops.git
     targetRevision: HEAD
     directory:
       recurse: true
@@ -54,7 +54,7 @@ spec:
   project: argocd
   source:
     path: argocd-applications
-    repoURL: https://github.com/andersondario/argocd-gitops.git
+    repoURL: https://github.com/holgers66/argocd-gitops.git
     targetRevision: HEAD
     directory:
       recurse: true
@@ -83,7 +83,7 @@ spec:
         - name: controller.admissionWebhooks.enabled
           value: "false"
     path: argocd-install/ingress-nginx
-    repoURL: https://github.com/andersondario/argocd-gitops.git
+    repoURL: https://github.com/holgers66/argocd-gitops.git
     targetRevision: HEAD
   destination:
     namespace: ingress-nginx
