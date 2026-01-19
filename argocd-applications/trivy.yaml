@@ -15,7 +15,7 @@ spec:
     spec:
       project: devops
       source:
-        repoURL: https://github.com/andersondario/trivy.git
+        repoURL: https://github.com/holgers66/trivy.git
         targetRevision: HEAD
         path: chart
         helm:
