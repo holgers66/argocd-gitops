@@ -8,20 +8,6 @@ configs:
     timeout.reconciliation: 30s
     url: https://argocd.k8s-demo.win
 
-    ## If Google SSO
-    # dex.config: |
-    #   connectors:
-    #   - config:
-    #       redirectURI: https://argocd.<YOUR_DOMAIN>/api/dex/callback
-    #       clientID: #### YOUR CLIENT ID ####
-    #       clientSecret: #### YOUR CLIENT SECRET ####
-    #       serviceAccountFilePath: /tmp/oidc/googleAuth.json
-    #       adminEmail: #### ADMIN EMAIL ####
-    #       hostedDomains: 
-    #         - <YOUR_DOMAIN>
-    #     type: google
-    #     id: google
-    #     name: Google
   
   rbac: 
     policy.default: role:readonly
@@ -63,14 +49,3 @@ server:
         hosts:
           - argocd.k8s-demo.win
 
-## If Google SSO
-# dex:
-#   volumes:
-#   - name: google-json
-#     secret:
-#       defaultMode: 420
-#       secretName: argocd-google-groups-json
-#   volumeMounts:
-#   - mountPath: /tmp/oidc
-#     name: google-json
-#     readOnly: truehelm install -n argocd argocd ./argo-cd -f values-<YOUR_FILE>.yaml 
