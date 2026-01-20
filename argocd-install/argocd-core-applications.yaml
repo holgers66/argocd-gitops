@@ -9,7 +9,7 @@ spec:
     helm:
       version: v3
       valueFiles:
-      - ../values-oci.yaml
+      - ../values-s11.yaml
     path: argocd-install/argo-cd
     repoURL: https://github.com/holgers66/argocd-gitops.git
     targetRevision: HEAD
