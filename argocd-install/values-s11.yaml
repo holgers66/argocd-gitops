@@ -6,7 +6,7 @@ configs:
     application.resourceTrackingMethod: annotations
 
     timeout.reconciliation: 30s
-    url: https://k8s-demo.win
+    url: https://schneiderhh.qzz.io
 
   
   rbac: 
@@ -40,12 +40,12 @@ server:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     hosts: 
-      - argocd.k8s-demo.win
+      - argocd.schneiderhh.qzz.io
     paths:
       - "/"
     pathType: Prefix
     tls: 
       - secretName: argocd-server-tls
         hosts:
-          - argocd.k8s-demo.win
+          - schneiderhh.qzz.io
 
