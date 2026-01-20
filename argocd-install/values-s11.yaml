@@ -6,7 +6,7 @@ configs:
     application.resourceTrackingMethod: annotations
 
     timeout.reconciliation: 30s
-    url: https://schneiderhh.qzz.io
+    url: https://argocd.schneiderhh.qzz.io
 
   
   rbac: 
@@ -47,5 +47,5 @@ server:
     tls: 
       - secretName: argocd-server-tls
         hosts:
-          - schneiderhh.qzz.io
+          - argocd.schneiderhh.qzz.io
 

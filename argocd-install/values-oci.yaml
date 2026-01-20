@@ -6,7 +6,7 @@ configs:
     application.resourceTrackingMethod: annotations
 
     timeout.reconciliation: 30s
-    url: https://k8s-demo.win
+    url: https://argocd.k8s-demo.win
 
   
   rbac: 
