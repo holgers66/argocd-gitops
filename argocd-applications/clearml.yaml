@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     chart: clearml
-    repoURL: https://clearml.github.io/helm-charts
+    repoURL: https://clearml.github.io/clearml-helm-charts
     targetRevision: 7.14.7
     values: |
       apiserver:
