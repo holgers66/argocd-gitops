@@ -33,6 +33,8 @@ spec:
           value: files.schneiderhh.qzz.io
         - name: fileserver.ingress.tlsSecretName
           value: clearml-server-tls
+        - name: fileserver.ingress.ingressClassName
+          value: nginx
         - name: fileserver.service.type
           value: ClusterIP
         - name: mongodb.architecture
