@@ -15,8 +15,8 @@ spec:
       parameters:
         - name: loki.storage.bucketNames.chunks
           value: loki-chunks
-        - name: loki.storage.bucketNames.index
-          value: loki-index
+        - name: loki.storage.bucketNames.ruler
+          value: loki-ruler
         - name: loki.storage.filesystem.chunksdirectory
           value: /tmp/loki-chunks
         - name: loki.storage.filesystem.indexdirectory
