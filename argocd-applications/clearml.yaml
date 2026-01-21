@@ -45,8 +45,14 @@ spec:
           value: 'false'
         - name: mongodb.pdb.create
           value: 'true'
-        - name: mongodb.podAntiAiifinityPreset
-          value: soft 
+        - name: mongodb.podAntiAffinityPreset
+          value: soft
+        - name: mongodb.upgradeStrategy
+          value: RollingUpdate
+        - name: mongodb.maxSurge
+          value: 0
+        - name: mongodb.maxUnavailable
+          value: 1
         - name: redis.architecture
           value: replication
         - name: redis.databaseNumber
