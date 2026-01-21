@@ -10,7 +10,7 @@ spec:
   source:
     path: charts/clearml-agent
     repoURL: 'https://github.com/clearml/clearml-helm-charts.git'
-    targetRevision: 255cabfd7f9b44d8748a1fe756f888baf5fccb45
+    targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
