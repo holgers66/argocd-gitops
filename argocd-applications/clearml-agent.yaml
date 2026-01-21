@@ -15,6 +15,10 @@ spec:
       valueFiles:
         - values.yaml
       parameters:
+        - name: agentk8sglue.defaultContainerImage
+          value: ubuntu:24.04
+        - name: sessions.svcType
+          value: ClusterIP
         - name: agentk8sglue.apiServerUrlReference
           value: 'https://api.schneiderhh.qzz.io'
         - name: agentk8sglue.fileServerUrlReference
