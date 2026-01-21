@@ -1,0 +1,56 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clearml
+spec:
+  destination:
+    name: ''
+    namespace: clearml
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: charts/clearml
+    repoURL: 'https://github.com/clearml/clearml-helm-charts.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: apiserver.ingress.hostName
+          value: api.schneiderhh.qzz.io
+        - name: apiserver.ingress.enabled
+          value: 'true'
+        - name: apiserver.ingress.tlsSecretName
+          value: clearml-server-tls
+        - name: apiserver.service.type
+          value: ClusterIP
+        - name: elasticsearch.replicas
+          value: '3'
+        - name: fileserver.ingress.enabled
+          value: 'true'
+        - name: fileserver.ingress.hostName
+          value: files.schneiderhh.qzz.io
+        - name: fileserver.ingress.tlsSecretName
+          value: clearml-server-tls
+        - name: fileserver.service.type
+          value: ClusterIP
+        - name: mongodb.architecture
+          value: replicaset
+        - name: mongodb.replicaCount
+          value: '2'
+        - name: redis.architecture
+          value: replication
+        - name: redis.databaseNumber
+          value: '2'
+        - name: webserver.ingress.enabled
+          value: 'true'
+        - name: webserver.ingress.hostName
+          value: app.schneiderhh.qzz.io
+        - name: webserver.ingress.tlsSecretName
+          value: clearml-server-tls
+        - name: webserver.service.type
+          value: ClusterIP
+  sources: []
+  project: devops
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
