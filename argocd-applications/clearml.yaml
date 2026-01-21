@@ -5,9 +5,11 @@ metadata:
 spec:
   ignoreDifferences:
     - group: apps
-      kind: Deployment
+      kind: StatefulSet
       jsonPointers:
-        - /spec/template/spec/containers/0/image
+        - /spec/template/spec/containers/0/resources
+        - /spec/template/spec/containers/1/resources
+        - /spec/template/spec/securityContext
   destination:
     name: ''
     namespace: clearml
@@ -54,10 +56,6 @@ spec:
           value: soft
         - name: mongodb.upgradeStrategy
           value: RollingUpdate
-        - name: mongodb.maxSurge
-          value: 0
-        - name: mongodb.maxUnavailable
-          value: 1
         - name: redis.architecture
           value: replication
         - name: redis.databaseNumber
