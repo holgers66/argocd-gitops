@@ -17,6 +17,10 @@ spec:
       parameters:
         - name: agentk8sglue.defaultContainerImage
           value: ubuntu:24.04
+        - name: agentk8sglue.basePodTemplate.env + # environment variables for the agent pods
+          value: |
+            - name: CLEARML_AGENT_NO_UPDATE
+              value: 'true'
         - name: sessions.svcType
           value: ClusterIP
         - name: agentk8sglue.apiServerUrlReference
