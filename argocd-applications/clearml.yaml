@@ -41,6 +41,12 @@ spec:
           value: replicaset
         - name: mongodb.replicaCount
           value: '2'
+        - name: mongodb.arbiter.enabled
+          value: 'false'
+        - name: mongodb.pdb.create
+          value: 'true'
+        - name: mongodb.podAntiAiifinityPreset
+          value: soft 
         - name: redis.architecture
           value: replication
         - name: redis.databaseNumber
