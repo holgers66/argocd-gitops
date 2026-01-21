@@ -21,6 +21,8 @@ spec:
           value: 'true'
         - name: apiserver.ingress.tlsSecretName
           value: clearml-server-tls
+        - name: apiserver.ingress.ingressClassName
+          value: nginx
         - name: apiserver.service.type
           value: ClusterIP
         - name: elasticsearch.replicas
@@ -47,6 +49,8 @@ spec:
           value: app.schneiderhh.qzz.io
         - name: webserver.ingress.tlsSecretName
           value: clearml-server-tls
+        - name: webserver.ingress.ingressClassName
+          value: nginx
         - name: webserver.service.type
           value: ClusterIP
   sources: []
