@@ -16,7 +16,7 @@ spec:
         - values.yaml
       parameters:
         - name: agentk8sglue.defaultContainerImage
-          value: ubuntu:18.04
+          value: ubuntu:24.04
         - name: agentk8sglue.extraEnvs
           value: |
             - name: CLEARML_AGENT_NO_UPDATE
