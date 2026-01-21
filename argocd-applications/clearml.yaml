@@ -3,6 +3,11 @@ kind: Application
 metadata:
   name: clearml
 spec:
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/template/spec/containers/0/image
   destination:
     name: ''
     namespace: clearml
