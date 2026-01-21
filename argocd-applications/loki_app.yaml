@@ -28,7 +28,7 @@ spec:
         - name: loki.schemaConfig.configs[0].store
           value: tsdb
         - name: loki.schemaConfig.configs[0].objectStore
-          value: filesystem
+          value: s3
         - name: loki.schemaConfig.configs[0].schema
           value: v13
         - name: loki.schemaConfig.configs[0].index.prefix
