@@ -1,29 +1,29 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: clearml
-  namespace: argocd
-spec:
-  destination:
-    namespace: clearml
-    server: https://kubernetes.default.svc
-  project: devops
-  source:
-    path: charts/clearml/
-    repoURL: https://github.com/holgers66/clearml-helm-charts
-    targetRevision: main
-  sync:
-    comparedTo:
-      destination:
-        namespace: clearml
-        server: https://kubernetes.default.svc
-      source:
-        path: charts/clearml/
-        repoURL: https://github.com/holgers66/clearml-helm-charts
-        targetRevision: main
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: clearml
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: clearml
+#     server: https://kubernetes.default.svc
+#   project: devops
+#   source:
+#     path: charts/clearml/
+#     repoURL: https://github.com/holgers66/clearml-helm-charts
+#     targetRevision: main
+#   sync:
+#     comparedTo:
+#       destination:
+#         namespace: clearml
+#         server: https://kubernetes.default.svc
+#       source:
+#         path: charts/clearml/
+#         repoURL: https://github.com/holgers66/clearml-helm-charts
+#         targetRevision: main
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#     - CreateNamespace=true
