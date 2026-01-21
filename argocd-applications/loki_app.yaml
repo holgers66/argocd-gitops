@@ -13,6 +13,28 @@ spec:
     targetRevision: HEAD
     helm:
       parameters:
+        - name: loki.schemaConfig.configs[0].from
+          value: "2024-01-01"
+        - name: loki.schemaConfig.configs[0].store
+          value: tsdb
+        - name: loki.schemaConfig.configs[0].objectStore
+          value: s3
+        - name: loki.schemaConfig.configs[0].schema
+          value: v13
+        - name: loki.schemaConfig.configs[0].index.prefix
+          value: loki_index_
+        - name: loki.schemaConfig.configs[0].index.period
+          value: 24h
+        - name: loki.ingester.chunkEncoding
+          value: snappy
+        - name: loki.querier.maxConcurrent
+          value: '4'
+        - name: loki.pattern_ingester.enabled
+          value: 'true'
+        - name: loki.limits_config.allow_structured_metadata
+          value: 'true'
+        - name: loki.limits_config.volume_enabled
+          value: 'true'
         - name: gateway.ingress.enabled
           value: 'true'
         - name: 'gateway.ingress.hosts[0].host'
