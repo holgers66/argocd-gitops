@@ -16,11 +16,11 @@ spec:
         - values.yaml
       parameters:
         - name: agentk8sglue.defaultContainerImage
-          value: ubuntu:24.04
-        - name: agentk8sglue.extraEnvs
-          value: |
-            - name: CLEARML_AGENT_NO_UPDATE
-              value: 'true'
+          value: ubuntu:18.04
+        - name: agentk8sglue.extraEnvs[0].name
+          value: CLEARML_AGENT_NO_UPDATE
+        - name: agentk8sglue.extraEnvs[0].value
+          value: 'true'
         - name: sessions.svcType
           value: ClusterIP
         - name: agentk8sglue.apiServerUrlReference
